@@ -1,0 +1,18 @@
+<h2>Cryptocurrency Coins</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for coin <- @coins do %>
+      <tr>
+        <td><%= coin.name %></td>
+        <td><%= link "Price history", to: coin_price_path(@conn, :index, coin) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

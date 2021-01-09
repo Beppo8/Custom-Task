@@ -1,0 +1,18 @@
+<h2><%= @coin.name %> Price History</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Recorded</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for price <- @prices do %>
+      <tr>
+        <td>&#36;<%= Float.round(price.price, 2) %></td>
+        <td><%= format_inserted_at(price.inserted_at) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
